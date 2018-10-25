@@ -21,6 +21,8 @@ import org.springframework.test.context.transaction.TransactionalTestExecutionLi
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
@@ -43,7 +45,7 @@ public class ServiceCostTest {
     @Before
     public void getVehicle(){
         VehicleEntity vehicleEntity = new VehicleEntity();
-        vehicleEntity.setType("Caminhão baú");
+        vehicleEntity.setTypeVehicle("Caminhão caçamba");
         this.vehicleEntity = vehicleEntity;
     }
 
@@ -65,7 +67,7 @@ public class ServiceCostTest {
     @Before
     public void getCharge(){
         ChargeEntity chargeEntity = new ChargeEntity();
-        chargeEntity.setWeight(10);
+        chargeEntity.setWeight(8);
         this.chargeEntity = chargeEntity;
     }
 
@@ -80,9 +82,30 @@ public class ServiceCostTest {
 
 
     @Test
-    public void shouldCost(){
-        double mainCost = serviceCost.getMainCost(vehicleEntity, streetEntities, chargeEntity );
-        assertNotNull(mainCost);
+    public void shouldGetStreetCostWithKilometer(){
+        double streetCostWithKilometer = serviceCost.getStreetCostWithKilometer(streetEntities);
+        assertNotNull(streetCostWithKilometer);
+        assertEquals(54.00, streetCostWithKilometer, 0.1);
 
+    }
+
+    @Test
+    public void shouldGetKilometerCostWithVehicle(){
+        double withVehicleCost = serviceCost.getKilometerCostWithVehicle(vehicleEntity, 54.00);
+        assertNotNull(withVehicleCost);
+        assertEquals(56.70, withVehicleCost, 0.1);
+    }
+
+    @Test
+    public void shouldGetCostKilometerWithWeight(){
+        double costKilometerWithWeight = serviceCost.getCostKilometerWithWeight(chargeEntity, streetEntities);
+        assertNotNull(costKilometerWithWeight);
+        assertEquals(6.0, costKilometerWithWeight, 0.1);
+    }
+
+    @Test
+    public void sholdGetMainCost(){
+        double mainCost =  serviceCost.getMainCost(vehicleEntity, streetEntities, chargeEntity);
+        assertNotNull(mainCost);
     }
 }

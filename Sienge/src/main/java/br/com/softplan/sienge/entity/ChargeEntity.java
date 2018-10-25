@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class ChargeEntity {
 
     final double WEIGTH = 0.02;
-    final double WEIGTH_LIMIT = 5;
+    final int WEIGTH_LIMIT = 5;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -17,14 +17,15 @@ public class ChargeEntity {
     private int weight;
     private double cost;
 
-    public double getCostByWeight(double weight){
+    public double getCostKilometerWithWeight(double kilometer){
         if (weight > WEIGTH_LIMIT){
-            return weight * WEIGTH;
+            int excess = this.weight - WEIGTH_LIMIT;
+            return excess * WEIGTH * kilometer;
+
         } else{
             return 0;
         }
     }
-
 
     public Long getIdWigth() {
         return idWigth;

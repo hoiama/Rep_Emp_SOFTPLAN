@@ -20,22 +20,26 @@ public class VehicleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long idVehicle;
-    private String type;
-    private double cost;
+
+    private String typeVehicle;
 
 
-    public double getCostByVehicle(VehicleEntity vehicle){
-        if(vehicle.getType() == BAU ){
-            return cost * VALUE_BAU;
+    public double getCostByVehicle(double costByVehicle){
+        if(this.typeVehicle == BAU ){
+            return costByVehicle * VALUE_BAU;
 
-        } else if(vehicle.getType() == CACAMBA){
-            return cost * VALUE_CACAMBA;
+        } else if(this.typeVehicle == CACAMBA){
+            return costByVehicle * VALUE_CACAMBA;
 
-        } else if(vehicle.getType() == CARRETA){
-            return cost * VALUE_CARRETA;
+        } else if(this.typeVehicle == CARRETA){
+            return costByVehicle * VALUE_CARRETA;
         }
 
         return 0;
+    }
+
+    public String getBAU() {
+        return BAU;
     }
 
     public Long getIdVehicle() {
@@ -46,19 +50,11 @@ public class VehicleEntity {
         this.idVehicle = idVehicle;
     }
 
-    public String getType() {
-        return type;
+    public String getTypeVehicle() {
+        return typeVehicle;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public double getCost() {
-        return cost;
-    }
-
-    public void setCost(double cost) {
-        this.cost = cost;
+    public void setTypeVehicle(String typeVehicle) {
+        this.typeVehicle = typeVehicle;
     }
 }
