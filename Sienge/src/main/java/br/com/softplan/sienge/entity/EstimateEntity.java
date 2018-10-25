@@ -1,4 +1,10 @@
 package br.com.softplan.sienge.entity;
 
-public class estimate {
+import java.util.List;
+
+public class EstimateEntity {
+
+    private String vehicle;
+    private List<String> typeStreet;
+
 }

@@ -1,6 +1,6 @@
 package br.com.softplan.sienge.enumns;
 
-public enum TypeVehicle {
+public enum TypeVehicleEnum {
 
     BAU, CAÇAMBA, CARRETA;
 
