@@ -17,6 +17,7 @@ public class ServiceCost {
 
 
     public double getMainCost(VehicleEntity vehicle, List<StreetEntity> streets, ChargeEntity charge){
+
         double streetCostWithKilometer = getStreetCostWithKilometer(streets);
         double vehicleCost = getKilometerCostWithVehicle(vehicle, streetCostWithKilometer);
         double weightCostByKilometer = getCostKilometerWithWeight(charge, streets);
@@ -44,11 +45,5 @@ public class ServiceCost {
 
         return chargeEntity.getCostKilometerWithWeight(kilometer);
     }
-
-
-
-
-
-
 
 }

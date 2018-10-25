@@ -6,25 +6,18 @@ import br.com.softplan.sienge.entity.ChargeEntity;
 import br.com.softplan.sienge.entity.StreetEntity;
 import br.com.softplan.sienge.entity.VehicleEntity;
 import br.com.softplan.sienge.main.App;
-import br.com.softplan.sienge.service.ServiceCost;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.TestExecutionListeners;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
-import org.springframework.test.context.transaction.TransactionalTestExecutionListener;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = App.class)
@@ -33,7 +26,6 @@ public class ServiceCostTest {
 
     @Autowired
     private ServiceCost serviceCost;
-
 
 
     private VehicleEntity vehicleEntity;
@@ -64,12 +56,14 @@ public class ServiceCostTest {
         this.streetEntities = streetEntities;
     }
 
+
     @Before
     public void getCharge(){
         ChargeEntity chargeEntity = new ChargeEntity();
         chargeEntity.setWeight(8);
         this.chargeEntity = chargeEntity;
     }
+
 
     @Test
     public void shouldAtributesNotNull() {
@@ -89,12 +83,14 @@ public class ServiceCostTest {
 
     }
 
+
     @Test
     public void shouldGetKilometerCostWithVehicle(){
         double withVehicleCost = serviceCost.getKilometerCostWithVehicle(vehicleEntity, 54.00);
         assertNotNull(withVehicleCost);
         assertEquals(56.70, withVehicleCost, 0.1);
     }
+
 
     @Test
     public void shouldGetCostKilometerWithWeight(){
@@ -103,9 +99,11 @@ public class ServiceCostTest {
         assertEquals(6.0, costKilometerWithWeight, 0.1);
     }
 
+
     @Test
     public void sholdGetMainCost(){
         double mainCost =  serviceCost.getMainCost(vehicleEntity, streetEntities, chargeEntity);
         assertNotNull(mainCost);
+        assertEquals(62.70, mainCost, 0.1);
     }
 }
