@@ -82,3 +82,11 @@ Sienge/.idea/sonarlint
 
 
 # End of https://www.gitignore.io/api/intellij
+
+Sienge/\.idea/
+Sienge/.idea
+Sienge/\.gradle/
+
+Sienge/build/
+Sienge/build
+Sienge/src/main/resources/static/framework/npm/node_modules/
