@@ -1,0 +1,10 @@
+.form{
+    width: 40rem;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+}
+
+.space div{
+    margin: 5rem;
+}
