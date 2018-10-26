@@ -3,8 +3,16 @@
     position: absolute;
     top: 50%;
     left: 10%;
+    background-color: #21629a85;
+    border-radius: 20px;
 }
 
+
 .space div{
-    margin: 5rem;
+    margin: 10px;
+}
+
+body {
+    background: url(/imagens/street1.jpg);
+    background-size: 100% auto;
 }

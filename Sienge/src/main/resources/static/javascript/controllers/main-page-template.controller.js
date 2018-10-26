@@ -3,16 +3,13 @@
 
     app.controller("MainPageTemplateController", MainPageTemplateController);
 
-    MainPageTemplateController.$inject =["$scope", "$filter", "$http", "restMethodsFactoryCurso", "restMethodsFactoryFormacao"];
+    MainPageTemplateController.$inject =["$scope", "$filter", "$http", "restMethodsFactoryCurso"];
 
-    function MainPageTemplateController($scope, $filter, $http, restMethodsFactoryCurso, restMethodsFactoryFormacao) {
-        $scope.cursos = [];
-        $scope.experiencias = [];
-        $scope.formacoes =[];
-        $scope.resumes = [];
-        $scope.curriculos = [];
-
-        $scope.testeCurso = 'testecurso';
+    function MainPageTemplateController($scope, $filter, $http, restMethodsFactoryCurso) {
+        $scope.streetPavimentadaDistance = 0;
+        $scope.streetNotPavimentadaDistance = 0;
+        $scope.selectedVehicle = 0;
+        $scope.chargeWeigth = 0;
 
         /**
          * Get de cursos usando factory:"FactoryMethodsRest" criada.
@@ -42,23 +39,6 @@
             $scope.getCursos();
         };
 
-
-
-        /**
-         * Get de formacao usando factory:"FactoryMethodsRest" criada.
-         * URL: /formacao/:idCurso
-         */
-        $scope.getFormacoes = function () {
-            restMethodsFactoryFormacao
-                .get({id:id},
-                    function (formacoesReturn) {
-                        console.log(formacoesReturn);
-                    }),
-
-                function (error) {
-                    console.log(error);
-                }
-        }
 
     }
 })()

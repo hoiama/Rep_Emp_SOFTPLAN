@@ -1,35 +1,36 @@
-<div class="form">
-    <div class="container">
+<div class="container space">
+    <div class="form">
         <div class="input-group">
-            <span class="input-group-addon">Pavimentada</span>
-            <input type="text" class="form-control">
+            <span class="input-group-addon">Pavimentada   </span>
+            <input type="text" class="form-control" ng-model="streetPavimentadaDistance">
             <span class="input-group-addon">km</span>
+            <span class="input-group-addon">""</span>
         </div>
 
         <div class="input-group">
             <span class="input-group-addon">Não pavimentada</span>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control ng-model="streetNotPavimentadaDistance">
             <span class="input-group-addon">km</span>
+            <span class="input-group-addon">""</span>
         </div>
 
         <!-- Single button -->
         <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Action <span class="caret"></span>
+                Veículo <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a href="#">Caminhão baú</a></li>
+                <li><a href="#">Caminhão caçamba</a></li>
+                <li><a href="#">Carreta</a></li>
             </ul>
         </div>
 
         <div class="input-group">
-            <span class="input-group-addon">Pavimentada</span>
-            <input type="text" class="form-control">
-            <span class="input-group-addon">km</span>
+            <span class="input-group-addon">Carga </span>
+            <input type="text" class="form-control" ng-model="chargeWeigth">
+            <span class="input-group-addon">Ton</span>
+            <span class="input-group-addon">""</span>
         </div>
     </div>
 </div>
