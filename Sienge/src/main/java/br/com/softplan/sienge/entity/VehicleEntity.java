@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
 public class VehicleEntity {
 
     final String BAU = "Caminhão baú";
@@ -17,28 +16,22 @@ public class VehicleEntity {
     final double VALUE_CARRETA = 1.12;
 
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long idVehicle;
     private String typeVehicle;
 
 
     public double getCostByVehicle(double costByVehicle){
-        if(this.typeVehicle == BAU ){
+        if(this.typeVehicle.equalsIgnoreCase(BAU)){
             return (costByVehicle * VALUE_BAU) - costByVehicle;
 
-        } else if(this.typeVehicle == CACAMBA){
+        } else if(this.typeVehicle.equalsIgnoreCase(CACAMBA)){
             return (costByVehicle * VALUE_CACAMBA) - costByVehicle;
 
-        } else if(this.typeVehicle == CARRETA){
+        } else if(this.typeVehicle.equalsIgnoreCase(CARRETA)){
             return (costByVehicle * VALUE_CARRETA) - costByVehicle;
         }
 
         return 0;
-    }
-
-    public String getBAU() {
-        return BAU;
     }
 
 

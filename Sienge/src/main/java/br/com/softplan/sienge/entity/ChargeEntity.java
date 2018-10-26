@@ -15,7 +15,6 @@ public class ChargeEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long idWigth;
     private int weight;
-    private double cost;
 
 
     public double getCostKilometerWithWeight(double kilometer){
@@ -45,16 +44,6 @@ public class ChargeEntity {
 
     public void setWeight(int weight) {
         this.weight = weight;
-    }
-
-
-    public double getCost() {
-        return cost;
-    }
-
-
-    public void setCost(double cost) {
-        this.cost = cost;
     }
 
 }

@@ -15,7 +15,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EntityScan(basePackageClasses = {ChargeEntity.class})
 @EnableJpaRepositories(basePackageClasses = StreetRepository.class)
 @ComponentScan(basePackageClasses= {CostController.class, ServiceCost.class})
-@EnableWebMvc
 public class App {
 
     public static void main(String[] args) {

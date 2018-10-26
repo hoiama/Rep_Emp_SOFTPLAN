@@ -15,16 +15,6 @@ public class ServiceCost {
     @Autowired
     StreetRepository streetRepository;
 
-
-    public double getMainCost(VehicleEntity vehicle, List<StreetEntity> streets, ChargeEntity charge){
-
-        double streetCostWithKilometer = getStreetCostWithKilometer(streets);
-        double vehicleCost = getKilometerCostWithVehicle(vehicle, streetCostWithKilometer);
-        double weightCostByKilometer = getCostKilometerWithWeight(charge, streets);
-        return streetCostWithKilometer + vehicleCost + weightCostByKilometer;
-    }
-
-
     public double getStreetCostWithKilometer(List<StreetEntity> streets){
         return streets
                 .stream()
@@ -38,11 +28,7 @@ public class ServiceCost {
     }
 
 
-    public double getCostKilometerWithWeight(ChargeEntity chargeEntity, List<StreetEntity> streets){
-        double kilometer = streets
-                                .stream()
-                                .mapToDouble(StreetEntity::getKilometer).sum();
-
+    public double getCostKilometerWithWeight(ChargeEntity chargeEntity, double kilometer){
         return chargeEntity.getCostKilometerWithWeight(kilometer);
     }
 

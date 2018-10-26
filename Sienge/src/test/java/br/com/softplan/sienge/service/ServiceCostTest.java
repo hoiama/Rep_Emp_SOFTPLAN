@@ -32,6 +32,7 @@ public class ServiceCostTest {
     private StreetEntity streetEntity;
     private ChargeEntity chargeEntity;
     private List<StreetEntity> streetEntities;
+    private double streetCostWithKilometer = 54.00;
 
 
     @Before
@@ -41,6 +42,7 @@ public class ServiceCostTest {
         this.vehicleEntity = vehicleEntity;
     }
 
+
     @Before
     public void getStreetEntity(){
         StreetEntity streetEntity = new StreetEntity();
@@ -48,6 +50,7 @@ public class ServiceCostTest {
         streetEntity.setTypeStreet("Pavimentada");
         this.streetEntity = streetEntity;
     }
+
 
     @Before
     public void getListStrets(){
@@ -79,31 +82,24 @@ public class ServiceCostTest {
     public void shouldGetStreetCostWithKilometer(){
         double streetCostWithKilometer = serviceCost.getStreetCostWithKilometer(streetEntities);
         assertNotNull(streetCostWithKilometer);
-        assertEquals(54.00, streetCostWithKilometer, 0.1);
+        assertEquals(streetCostWithKilometer, streetCostWithKilometer, 0.1);
 
     }
 
 
     @Test
     public void shouldGetKilometerCostWithVehicle(){
-        double withVehicleCost = serviceCost.getKilometerCostWithVehicle(vehicleEntity, 54.00);
+        double withVehicleCost = serviceCost.getKilometerCostWithVehicle(vehicleEntity, streetCostWithKilometer);
         assertNotNull(withVehicleCost);
-        assertEquals(56.70, withVehicleCost, 0.1);
+        assertEquals(2.70, withVehicleCost, 0.1);
     }
 
 
     @Test
     public void shouldGetCostKilometerWithWeight(){
-        double costKilometerWithWeight = serviceCost.getCostKilometerWithWeight(chargeEntity, streetEntities);
+        double costKilometerWithWeight = serviceCost.getCostKilometerWithWeight(chargeEntity, streetEntity.getKilometer());
         assertNotNull(costKilometerWithWeight);
         assertEquals(6.0, costKilometerWithWeight, 0.1);
     }
 
-
-    @Test
-    public void sholdGetMainCost(){
-        double mainCost =  serviceCost.getMainCost(vehicleEntity, streetEntities, chargeEntity);
-        assertNotNull(mainCost);
-        assertEquals(62.70, mainCost, 0.1);
-    }
 }
