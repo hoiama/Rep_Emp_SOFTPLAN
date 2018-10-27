@@ -3,23 +3,24 @@
 
     app.controller("MainPageTemplateController", MainPageTemplateController);
 
-    MainPageTemplateController.$inject =["$scope", "$filter", "$http", "restMethodsFactoryCurso"];
+    MainPageTemplateController.$inject =["$scope", "$filter", "$http", "restMethodsVehicleFactory"];
 
-    function MainPageTemplateController($scope, $filter, $http, restMethodsFactoryCurso) {
-        $scope.streetPavimentadaDistance = 0;
-        $scope.streetNotPavimentadaDistance = 0;
-        $scope.selectedVehicle = 0;
-        $scope.chargeWeigth = 0;
+    function MainPageTemplateController($scope, $filter, $http, restMethodsVehicleFactory) {
+        $scope.streetPavimentadaDistance = "";
+        $scope.streetNotPavimentadaDistance = "";
+        $scope.streets = {};
+        $scope.selectedVehicle = "";
+        $scope.vehicleCost = "";
+        $scope.chargeWeigth = "";
 
-        /**
-         * Get de cursos usando factory:"FactoryMethodsRest" criada.
-         * URL: /curso/:idCurso
-         */
-        $scope.getCurso = function(id){
-            restMethodsFactoryCurso
-                .get({id:id},
+
+
+        $scope.PostVehicle = function(id){
+            restMethodsVehicleFactory
+                .save({"typeVehicle": "Caminhão caçamba"},
                     function (cursosReturn) {
-                        $scope.cursos = cursosReturn;
+                        $scope.vehicleCost = cursosReturn.response.data.post;
+                        $scope.vehicleCost = cursosReturn.response.data;
                         console.log(cursosReturn);
                     }),
 
@@ -27,17 +28,6 @@
                     console.log(error);
                 }
         }
-
-
-        $scope.getCursos = function() {
-            $scope.cursos = restMethodsFactoryCurso.query();
-            console.log($scope.cursos);
-        }
-
-
-        $scope.init = function () {
-            $scope.getCursos();
-        };
 
 
     }

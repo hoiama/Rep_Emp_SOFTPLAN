@@ -15,14 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RequestMapping("street/")
+@RequestMapping("street")
 @RestController
 public class StreetController {
 
     @Autowired
     ServiceCost serviceCost;
 
-    @PostMapping(path = "post", consumes = {MediaType.APPLICATION_JSON_VALUE},produces = {MediaType.APPLICATION_JSON_VALUE})
+    @PostMapping(path = "", consumes = {MediaType.APPLICATION_JSON_VALUE},produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity getStreetCost(
             @RequestBody List<StreetEntity> streetEntityList){
 

@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RequestMapping("vehicle/")
+@RequestMapping("vehicle")
 @RestController
 public class VehicleController {
 
     @Autowired
     ServiceCost serviceCost;
 
-    @PostMapping(path = "post", consumes = {MediaType.APPLICATION_JSON_VALUE},produces = {MediaType.APPLICATION_JSON_VALUE})
+    @PostMapping(path = "", consumes = {MediaType.APPLICATION_JSON_VALUE},produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity getVehicleCost(
             @RequestBody VehicleEntity vehicle){
         System.out.println(vehicle.getTypeVehicle());
