@@ -1,37 +1,20 @@
 {
-  "name": "curricluns",
+  "name": "npm",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-resource": "^1.7.5",
+    "angular-route": "^1.7.5",
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hoiama/Rep_Pess_Curricluns.git"
-  },
-  "keywords": [
-    "curriculos",
-    "sistema",
-    "de",
-    "curriculos"
-  ],
-  "author": "Hoiama Rodrigues",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "angular": "^1.7.2",
-    "angular-resource": "^1.7.2",
-    "angular-route": "^1.7.2",
-    "bootstrap": "^4.1.3",
-    "gulp-install": "^1.1.0",
-    "http-server": "^0.11.1",
-    "jquery": "^3.3.1",
-    "package.json": "^2.0.1",
-    "popper.js": "^1.14.3",
-    "resource": "^0.8.1"
-  },
-  "bugs": {
-    "url": "https://github.com/hoiama/Rep_Pess_Curricluns/issues"
-  },
-  "homepage": "https://github.com/hoiama/Rep_Pess_Curricluns#readme"
+  "description": ""
 }

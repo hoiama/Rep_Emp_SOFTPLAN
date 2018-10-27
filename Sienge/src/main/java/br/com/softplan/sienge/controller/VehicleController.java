@@ -1,17 +1,12 @@
 package br.com.softplan.sienge.controller;
 
-import br.com.softplan.sienge.entity.ChargeEntity;
-import br.com.softplan.sienge.entity.StreetEntity;
-import br.com.softplan.sienge.entity.VehicleEntity;
-import br.com.softplan.sienge.service.ServiceCost;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import br.com.softplan.sienge.service.ServiceCost;
 
-import java.util.List;
 
 @RequestMapping("vehicle")
 @RestController
