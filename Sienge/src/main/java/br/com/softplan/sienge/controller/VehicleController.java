@@ -1,5 +1,6 @@
 package br.com.softplan.sienge.controller;
 
+import br.com.softplan.sienge.entity.VehicleEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

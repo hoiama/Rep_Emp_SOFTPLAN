@@ -1,10 +1,11 @@
-app.factory('restMethodsVehicleFactory', restMethodsVehicleFactory);
+app.factory('resourceVehicleFactory', resourceVehicleFactory);
 
-function restMethodsVehicleFactory($resource){
-    return $resource("/vehicle/:id", null, {
-        update : {
-            method :'PUT'
-        }
-    });
+function resourceVehicleFactory($resource){
+
+    let url = "/vehicle/:id";
+    let params = {kilometer: "@id", weight:"@id"};
+    let actions = { update: { method: 'PUT' } };
+
+    return $resource(url, params, actions);
 }
 

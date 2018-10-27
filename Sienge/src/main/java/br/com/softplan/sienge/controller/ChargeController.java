@@ -20,10 +20,10 @@ public class ChargeController {
     @Autowired
     ServiceCost serviceCost;
 
-    @PostMapping(path = "", consumes = {MediaType.APPLICATION_JSON_VALUE},produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(path = "")
     public ResponseEntity getVehicleCost(
-            @RequestBody ChargeEntity charge,
-            @RequestParam double kilometer){
+            @RequestParam(value = "weight", required=true) int weight,  ChargeEntity charge,
+            @RequestParam(value = "kilometer", required=true) double kilometer){
 
         double cost = serviceCost.getCostKilometerWithWeight(charge, kilometer);
         return new ResponseEntity<>(cost, HttpStatus.OK);

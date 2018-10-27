@@ -1,14 +1,15 @@
 .form{
-    width: 40rem;
+    width: 30rem;
     position: absolute;
     top: 50%;
     left: 10%;
     background-color: #21629a85;
     border-radius: 20px;
+    padding: 1rem;
 }
 
 
-.space div{
+.space > div{
     margin: 10px;
 }
 

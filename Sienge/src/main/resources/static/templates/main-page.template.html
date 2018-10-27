@@ -1,38 +1,53 @@
 <div class="container space">
     <div class="form">
-        <div class="input-group">
-            <span class="input-group-addon">Pavimentada   </span>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Pavimentada</span>
+            </div>
             <input type="text" class="form-control" ng-model="streetPavimentadaDistance">
-            <span class="input-group-addon">km</span>
-            <span class="input-group-addon">""</span>
+            <div class="input-group-append">
+                <span class="input-group-text">km</span>
+                <span class="input-group-text">valor</span>
+            </div>
         </div>
 
-        <div class="input-group">
-            <span class="input-group-addon">Não pavimentada</span>
+         <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Não pavimentada</span>
+            </div>
             <input type="text" class="form-control" ng-model="streetNotPavimentadaDistance">
-            <span class="input-group-addon">km</span>
-            <span class="input-group-addon">""</span>
+            <div class="input-group-append">
+                <span class="input-group-text">km</span>
+                <span class="input-group-text">valor</span>
+            </div>
         </div>
 
-        <!-- Single button -->
-        <div class="btn-group">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Veículo <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-                <li><a href="#">Caminhão baú</a></li>
-                <li><a href="#">Caminhão caçamba</a></li>
-                <li><a href="#">Carreta</a></li>
-            </ul>
-        </div>
-
-        <div class="input-group">
-            <span class="input-group-addon">Carga </span>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Carga</span>
+            </div>
             <input type="text" class="form-control" ng-model="chargeWeigth">
-            <span class="input-group-addon">Ton</span>
-            <span class="input-group-addon">""</span>
+            <div class="input-group-append">
+                <span class="input-group-text">Ton</span>
+                <span class="input-group-text">{{chargeWeigthCost}}</span>
+            </div>
         </div>
-    </div>
 
-    <button ng-click="PostVehicle()">vehicle {{vehicleCost}}</button>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" ng-model="selectedVehicle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{selectedVehicle}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" ng-model="selectedVehicle" href="#">Caminhão baú</a>
+                    <a class="dropdown-item" href="#">Caminhão caçamba</a>
+                    <a class="dropdown-item" href="#">Carreta</a>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-secondary" ng-click="findCharge()" >Consultar</button>
+        </div>
+
+    </div>
 </div>
