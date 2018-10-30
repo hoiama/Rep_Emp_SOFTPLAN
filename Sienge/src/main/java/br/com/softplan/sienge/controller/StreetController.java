@@ -36,6 +36,7 @@ public class StreetController {
         return new ResponseEntity<>(costStreet, HttpStatus.OK);
     }
 
+
     @GetMapping(path = "/nao-pavimentada")
     public ResponseEntity getStreetPavimentadaCostNaoPavimentada(
             @RequestParam int kilometer){
