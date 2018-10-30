@@ -6,8 +6,8 @@ OBJETIVO:
 	Desenvolver sistema de consulta de valores envolvendo 
 	
 	- Custo com veículo
-	- kilometros de estrada
-	- Peso da carga tranpostada
+	- Quilometro de estrada
+	- Peso da carga transportada
 
 
 TECNOLOGIAS:
