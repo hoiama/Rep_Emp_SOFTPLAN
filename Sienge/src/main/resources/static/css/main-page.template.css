@@ -1,7 +1,22 @@
+
+body, html {
+    height: 100%;
+}
+
+
+.bg {
+    background-image: url(/imagens/street1.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 .form{
     width: 25rem;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 10%;
     background-color: #21629a85;
     border-radius: 20px;
@@ -15,11 +30,6 @@
     margin: 10px;
 }
 
-
-body {
-    background: url(/imagens/street1.jpg);
-    background-size: 100% auto;
-}
 
 
 .vehicle-div{
