@@ -50,14 +50,14 @@ CONCLUÍDO:
 
 
 
-	- Consulta de custo por kilometro de estada Não pavimentada:
+	- Consulta de custo por quilometro de estada Não pavimentada:
 	
 		GET: http://localhost:8080/street//nao-pavimentada?kilometer=100
 
 
 
 	
-	- Consulta de custo por lilometro de estrada Pavimentada:
+	- Consulta de custo por quilometro de estrada Pavimentada:
 	
 		GET: http://localhost:8080/street/pavimentada?kilometer=100
 
