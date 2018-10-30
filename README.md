@@ -91,6 +91,8 @@ FALTA CONCLUIR:
 
 OBSERVAÇÕES
 
-	Projeto em desenvolvimento.
+	- Projeto em desenvolvimento.
+	- Antes de executar será necessário instalar as dependencias via "npm" no seguinte path:
+		/Sienge/src/main/resources/static/framework/npm
 
 </p>
