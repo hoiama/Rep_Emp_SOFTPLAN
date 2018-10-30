@@ -1,7 +1,15 @@
 package br.com.softplan.sienge.entity;
 
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.List;
 
+@Component
+@Entity
 public class StreetEntity {
 
     final String PAVIMENTADA = "Pavimentada";
@@ -10,15 +18,28 @@ public class StreetEntity {
     final double VALUE_PAVIMENTADA = 0.54;
     final double VALUE_NAO_PAVIMENTADA = 0.62;
 
-    private String TypeStreet;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long idStreet;
+    private String typeStreet;
     private double kilometer;
 
+
+    public Long getIdStreet() {
+        return idStreet;
+    }
+
+    public void setIdStreet(Long idStreet) {
+        this.idStreet = idStreet;
+    }
+
     public String getTypeStreet() {
-        return TypeStreet;
+        return typeStreet;
     }
 
     public void setTypeStreet(String typeStreet) {
-        TypeStreet = typeStreet;
+        this.typeStreet = typeStreet;
     }
 
     public double getKilometer() {
@@ -29,21 +50,24 @@ public class StreetEntity {
         this.kilometer = kilometer;
     }
 
-    public double getCost(List<StreetEntity> strets){
 
-        for (StreetEntity street : strets) {
+    public double getCostAll(){
+        if(this.typeStreet.equalsIgnoreCase(PAVIMENTADA)) {
+            return VALUE_PAVIMENTADA * kilometer;
 
-            String streetType = street.getTypeStreet();
-            double kilometer = street.getKilometer();
-
-            if(streetType == PAVIMENTADA) {
-                return VALUE_PAVIMENTADA * kilometer;
-
-            }else if(streetType == NAO_PAVIMENTADA){
-                return VALUE_NAO_PAVIMENTADA * kilometer;
-            }
+        }else if(this.typeStreet.equalsIgnoreCase(NAO_PAVIMENTADA)){
+            return VALUE_NAO_PAVIMENTADA * kilometer;
         }
+
         return 0;
+    }
+
+    public double getCostPavimentada(int kilometer){
+        return VALUE_PAVIMENTADA * kilometer;
+    }
+
+    public double getCostNaoPavimentada(int kilometer){
+        return VALUE_NAO_PAVIMENTADA * kilometer;
     }
 
 }

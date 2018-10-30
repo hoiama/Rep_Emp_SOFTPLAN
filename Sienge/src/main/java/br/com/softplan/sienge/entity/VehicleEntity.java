@@ -1,46 +1,56 @@
 package br.com.softplan.sienge.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class VehicleEntity {
 
-    final String BAU = "Caminhão baú";
-    final String CACAMBA = "Caminhão caçamba";
-    final String CARRETA = "Carreta";
+    final String BAU = "bau";
+    final String CACAMBA = "cacamba";
+    final String CARRETA = "carreta";
 
     final double VALUE_BAU = 1.00;
     final double VALUE_CACAMBA = 1.05;
     final double VALUE_CARRETA = 1.12;
 
-    private String type;
-    private double cost;
+
+    private Long idVehicle;
+    private String typeVehicle;
 
 
-    public double getCostByVehicle(VehicleEntity vehicle){
-        if(vehicle.getType() == BAU ){
-            return cost * VALUE_BAU;
+    public double getCostByVehicle(double costByVehicle){
+        if(this.typeVehicle.equalsIgnoreCase(BAU)){
+            return (costByVehicle * VALUE_BAU) - costByVehicle;
 
-        } else if(vehicle.getType() == CACAMBA){
-            return cost * VALUE_CACAMBA;
+        } else if(this.typeVehicle.equalsIgnoreCase(CACAMBA)){
+            return (costByVehicle * VALUE_CACAMBA) - costByVehicle;
 
-        } else if(vehicle.getType() == CARRETA){
-            return cost * VALUE_CARRETA;
+        } else if(this.typeVehicle.equalsIgnoreCase(CARRETA)){
+            return (costByVehicle * VALUE_CARRETA) - costByVehicle;
         }
 
-        return 0;
+        return 0.0;
     }
 
-    public String getType() {
-        return type;
+
+    public Long getIdVehicle() {
+        return idVehicle;
     }
 
-    public void setType(String type) {
-        this.type = type;
+
+    public void setIdVehicle(Long idVehicle) {
+        this.idVehicle = idVehicle;
     }
 
-    public double getCost() {
-        return cost;
+
+    public String getTypeVehicle() {
+        return typeVehicle;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
+
+    public void setTypeVehicle(String typeVehicle) {
+        this.typeVehicle = typeVehicle;
     }
 }

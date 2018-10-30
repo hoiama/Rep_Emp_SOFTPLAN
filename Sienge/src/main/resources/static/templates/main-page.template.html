@@ -1,0 +1,53 @@
+<div class="container space">
+    <div class="form">
+        <form name="costForm">
+                <div class="col-md-9 mb-3">
+                    <label for="streetPavimentadaDistance">Pavimentada</label>
+                    <div class="form-group align-cost-result">
+                        <input type="text" id="streetPavimentadaDistance" name="streetPavimentadaDistance" class="form-control" ng-model="streetPavimentadaDistance" onchange="angular.element(this).scope().getStreetPavimentada()" placeholder="Kilometros" required>
+                        <div class="input-group-text">R$: {{streetTotalCostPavimentada}}</div>
+                    </div>
+                    <div class="alert alert-danger" ng-show="costForm.streetPavimentadaDistance.$invalid && costForm.streetPavimentadaDistance.$touched">
+                       Campo obrigatório
+                    </div>
+                </div>
+
+                <div class="col-md-9 mb-3">
+                    <label for="streetNotPavimentadaDistance">Não pavimentada</label>
+                    <div class="form-group align-cost-result">
+                        <input type="text" id="streetNotPavimentadaDistance" name="streetNotPavimentadaDistance" class="form-control" ng-model="streetNotPavimentadaDistance" onchange="angular.element(this).scope().getStreetNaoPavimentada()" placeholder="Kilometros"  required>
+                        <div class="input-group-text">R$: {{streetTotalCostNaoPavimentada}}</div>
+                    </div>
+                    <div class="alert alert-danger" ng-show="costForm.streetNotPavimentadaDistance.$invalid && costForm.streetNotPavimentadaDistance.$touched">
+                        Campo obrigatório
+                    </div>
+                </div>
+
+                <div class="col-md-9 mb-3">
+                    <label for="chargeWeigth">Peso</label>
+                    <div class="form-group align-cost-result">
+                        <input type="text" id="chargeWeigth" name="chargeWeigth" class="form-control" ng-model="chargeWeigth" onchange="angular.element(this).scope().getCharge()" placeholder="Toneladas" required>
+                        <div class="input-group-text">R$: {{chargeWeigthCost}}</div>
+                    </div>
+                    <div class="alert alert-danger" ng-show="costForm.chargeWeigth.$invalid && costForm.chargeWeigth.$touched">
+                        Campo obrigatório
+                    </div>
+                </div>
+
+            <div class="col-md-9 mb-3">
+                <label for="chargeWeigth">Veículo</label>
+                <div class="form-group align-cost-result">
+                    <select class="my-dropdown" ng-model="selectedVehicle" ng-change="getVehicleCost()">
+                        <option ng-repeat="option in availableOptions" value="{{option.value}}">{{option.name}}</option>
+                    </select>
+                    <div class="input-group-text">R$: {{vehicleCost}}</div>
+                </div>
+                <div class="alert alert-danger" ng-show="costForm.chargeWeigth.$invalid && costForm.chargeWeigth.$touched">
+                    Campo obrigatório
+                </div>
+            </div>
+
+            <div>Total {{totalCost | number : 2}}</div>
+        </form>
+    </div>
+</div>
