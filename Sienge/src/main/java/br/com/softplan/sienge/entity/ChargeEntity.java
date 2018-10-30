@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.text.DecimalFormat;
 
 @Entity
 public class ChargeEntity {
@@ -15,7 +16,6 @@ public class ChargeEntity {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long idWigth;
     private int weight;
-
 
     public double getCostKilometerWithWeight(double kilometer){
         if (weight > WEIGTH_LIMIT){

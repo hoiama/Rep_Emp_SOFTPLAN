@@ -7,9 +7,9 @@ import javax.persistence.Id;
 
 public class VehicleEntity {
 
-    final String BAU = "Caminhão baú";
-    final String CACAMBA = "Caminhão caçamba";
-    final String CARRETA = "Carreta";
+    final String BAU = "bau";
+    final String CACAMBA = "cacamba";
+    final String CARRETA = "carreta";
 
     final double VALUE_BAU = 1.00;
     final double VALUE_CACAMBA = 1.05;
@@ -31,7 +31,7 @@ public class VehicleEntity {
             return (costByVehicle * VALUE_CARRETA) - costByVehicle;
         }
 
-        return 0;
+        return 0.0;
     }
 
 

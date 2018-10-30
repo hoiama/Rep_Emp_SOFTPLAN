@@ -8,10 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,11 +19,28 @@ public class StreetController {
     @Autowired
     ServiceCost serviceCost;
 
-    @PostMapping(path = "", consumes = {MediaType.APPLICATION_JSON_VALUE},produces = {MediaType.APPLICATION_JSON_VALUE})
+    @PostMapping(path = "")
     public ResponseEntity getStreetCost(
             @RequestBody List<StreetEntity> streetEntityList){
 
         double costStreet = serviceCost.getStreetCostWithKilometer(streetEntityList);
+        return new ResponseEntity<>(costStreet, HttpStatus.OK);
+    }
+
+
+    @GetMapping(path = "/pavimentada")
+    public ResponseEntity getStreetPavimentadaCost(
+            @RequestParam int kilometer){
+
+        double costStreet = serviceCost.getStreetCostWithKilometerPavimentada(kilometer);
+        return new ResponseEntity<>(costStreet, HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/nao-pavimentada")
+    public ResponseEntity getStreetPavimentadaCostNaoPavimentada(
+            @RequestParam int kilometer){
+
+        double costStreet = serviceCost.getStreetCostWithKilometerNaoPavimentada(kilometer);
         return new ResponseEntity<>(costStreet, HttpStatus.OK);
     }
 }

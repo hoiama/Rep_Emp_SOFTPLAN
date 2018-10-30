@@ -7,29 +7,41 @@ import br.com.softplan.sienge.repository.StreetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 @Component
 public class ServiceCost {
 
     @Autowired
-    StreetRepository streetRepository;
+    StreetEntity streetEntity;
+
+    DecimalFormat formatDouble = new DecimalFormat(".##");
+
 
     public double getStreetCostWithKilometer(List<StreetEntity> streets){
-        return streets
+        return Double.valueOf(formatDouble.format(
+                streets
                 .stream()
-                .mapToDouble(StreetEntity::getCost)
-                .sum();
+                .mapToDouble(StreetEntity::getCostAll)
+                .sum()
+        ));
     }
 
+    public double getStreetCostWithKilometerPavimentada(int kilometer){
+        return Double.valueOf(formatDouble.format(streetEntity.getCostPavimentada(kilometer)));
+    }
+
+    public double getStreetCostWithKilometerNaoPavimentada(int kilometer){
+        return Double.valueOf(formatDouble.format(streetEntity.getCostNaoPavimentada(kilometer)));
+    }
 
     public double getKilometerCostWithVehicle(VehicleEntity vehicle, double costWithKilometer){
-        return vehicle.getCostByVehicle(costWithKilometer);
+        return Double.valueOf(formatDouble.format(vehicle.getCostByVehicle(costWithKilometer)));
     }
 
-
     public double getCostKilometerWithWeight(ChargeEntity chargeEntity, double kilometer){
-        return chargeEntity.getCostKilometerWithWeight(kilometer);
+        return Double.valueOf(formatDouble.format(chargeEntity.getCostKilometerWithWeight(kilometer)));
     }
 
 }

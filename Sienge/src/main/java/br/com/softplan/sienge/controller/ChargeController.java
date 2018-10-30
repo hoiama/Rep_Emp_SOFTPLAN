@@ -21,6 +21,7 @@ public class ChargeController {
     ServiceCost serviceCost;
 
     @GetMapping(path = "")
+    @ResponseBody
     public ResponseEntity getVehicleCost(
             @RequestParam(value = "weight", required=true) int weight,  ChargeEntity charge,
             @RequestParam(value = "kilometer", required=true) double kilometer){

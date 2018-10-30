@@ -8,6 +8,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import br.com.softplan.sienge.service.ServiceCost;
 
+import java.text.DecimalFormat;
+
 
 @RequestMapping("vehicle")
 @RestController
@@ -16,11 +18,12 @@ public class VehicleController {
     @Autowired
     ServiceCost serviceCost;
 
-    @PostMapping(path = "", consumes = {MediaType.APPLICATION_JSON_VALUE},produces = {MediaType.APPLICATION_JSON_VALUE})
+    @GetMapping(path = "")
     public ResponseEntity getVehicleCost(
-            @RequestBody VehicleEntity vehicle){
-        System.out.println(vehicle.getTypeVehicle());
-        double cost = serviceCost.getKilometerCostWithVehicle(vehicle, 54.00);
+            @RequestParam(value="typeVehicle", required=true) String typeVehicle, VehicleEntity vehicle,
+            @RequestParam double costWithKilometer){
+
+        double cost = serviceCost.getKilometerCostWithVehicle(vehicle, costWithKilometer);
         return new ResponseEntity<>(cost, HttpStatus.OK);
     }
 }
