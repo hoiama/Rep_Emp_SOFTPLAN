@@ -59,3 +59,7 @@ input.ng-invalid{
 .my-dropdown option{
     background-color: #d2e4ff;
 }
+
+.space-result{
+    width: 6rem;
+}

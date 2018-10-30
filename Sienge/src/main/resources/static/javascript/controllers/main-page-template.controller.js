@@ -33,7 +33,7 @@
                    $scope.streetTotalCostPavimentada = response.data;
                    $scope.$watch('streetTotalCostPavimentada', function () {
                        $scope.totalCost = 0;
-                       $scope.totalCost +=
+                       $scope.totalCost =
                            $scope.streetTotalCostPavimentada+
                            $scope.streetTotalCostNaoPavimentada+
                            $scope.chargeWeigthCost+
@@ -43,7 +43,6 @@
                 function (error) {
                     console.log(response);
                 });
-
         }
 
 
@@ -58,7 +57,7 @@
                     $scope.streetTotalCostNaoPavimentada = response.data;
                     $scope.$watch('streetTotalCostPavimentada', function () {
                         $scope.totalCost = 0;
-                        $scope.totalCost +=
+                        $scope.totalCost =
                             $scope.streetTotalCostPavimentada+
                             $scope.streetTotalCostNaoPavimentada+
                             $scope.chargeWeigthCost+
@@ -83,7 +82,8 @@
                 function(response) {
                     $scope.chargeWeigthCost = response.data;
                     $scope.$watch('streetTotalCostPavimentada', function () {
-                        $scope.totalCost +=
+                        $scope.totalCost = 0;
+                        $scope.totalCost =
                             $scope.streetTotalCostPavimentada+
                             $scope.streetTotalCostNaoPavimentada+
                             $scope.chargeWeigthCost+
@@ -103,11 +103,11 @@
                     params: {typeVehicle:$scope.selectedVehicle,costWithKilometer:parseInt($scope.streetTotalCostPavimentada) + parseInt($scope.streetTotalCostNaoPavimentada)}
                 }).then(
                     function(response) {
-                        //$scope.vehicleCost = response.data;
+                        $scope.vehicleCost = response.data;
                         $scope.$watch('streetTotalCostPavimentada', function () {
-                            $scope.vehicleCost = response.data;
+                            //$scope.vehicleCost = response.data;
                             $scope.totalCost = 0;
-                            $scope.totalCost +=
+                            $scope.totalCost =
                                 $scope.streetTotalCostPavimentada+
                                 $scope.streetTotalCostNaoPavimentada+
                                 $scope.chargeWeigthCost+
@@ -117,7 +117,6 @@
                     function(error) {
                         console.log(response);
                     });
-
         };
 
 
