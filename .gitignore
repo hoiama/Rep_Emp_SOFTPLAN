@@ -1,11 +1,7 @@
 
 Sienge/build/
-
 Sienge/\.idea/
 
-<<<<<<< HEAD
-Sienge/\.gradle/
-=======
 # User-specific stuff
 Sienge/.idea/**/workspace.xml
 Sienge/.idea/**/tasks.xml
@@ -88,12 +84,6 @@ Sienge/\.idea/
 Sienge/.idea
 Sienge/\.gradle/
 Sienge/\.gradle*
-
 Sienge/.gradle
 Sienge/.gradle*
-Sienge/build/
-Sienge/build
-Sienge/build/*
-Sienge/build*
 Sienge/src/main/resources/static/framework/npm/node_modules/
->>>>>>> hlg
