@@ -1,7 +1,5 @@
 <h2><p align="center"> Sistema de orçamento de Estradas</p></h2>
 
-Sistema pessoal de Gestão de Estudos EAD, com foco em gerenciar o processo de aprendizado de estudantes da modalidade a distância, há um Artigo acima levantando alguns pontos, e esta sendo elaborado o projeto de software que também se encontra disponível acima.
-
 
 OBJETIVO:
 
