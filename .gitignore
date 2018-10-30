@@ -87,8 +87,13 @@ Sienge/.idea/sonarlint
 Sienge/\.idea/
 Sienge/.idea
 Sienge/\.gradle/
+Sienge/\.gradle*
 
+Sienge/.gradle
+Sienge/.gradle*
 Sienge/build/
 Sienge/build
+Sienge/build/*
+Sienge/build*
 Sienge/src/main/resources/static/framework/npm/node_modules/
 >>>>>>> hlg

@@ -21,6 +21,10 @@
         $scope.vehicleCost = 0;
         $scope.totalCost = 0;
 
+
+        /**
+         * Get method to get the cost of paved street
+         */
         $scope.getStreetPavimentada = function () {
             if($scope.costForm.$invalid){return;}
             $http({
@@ -46,6 +50,9 @@
         }
 
 
+        /**
+         * Get method to get the cost of Not paved street
+         */
         $scope.getStreetNaoPavimentada = function () {
             $http({
                 url: "/street/nao-pavimentada",
@@ -55,7 +62,7 @@
             }).then(
                 function(response) {
                     $scope.streetTotalCostNaoPavimentada = response.data;
-                    $scope.$watch('streetTotalCostPavimentada', function () {
+                    $scope.$watch('streetTotalCostNaoPavimentada', function () {
                         $scope.totalCost = 0;
                         $scope.totalCost =
                             $scope.streetTotalCostPavimentada+
@@ -70,6 +77,9 @@
         }
 
 
+        /**
+         * Get method to get the cost of charge in tonne
+         */
         $scope.getCharge = function () {
             $http({
                 url: "/charge",
@@ -81,7 +91,7 @@
             }).then(
                 function(response) {
                     $scope.chargeWeigthCost = response.data;
-                    $scope.$watch('streetTotalCostPavimentada', function () {
+                    $scope.$watch('chargeWeigthCost', function () {
                         $scope.totalCost = 0;
                         $scope.totalCost =
                             $scope.streetTotalCostPavimentada+
@@ -96,6 +106,9 @@
         }
 
 
+        /**
+         * Get method to get the cost of vehicle used in transport of charge
+         */
         $scope.getVehicleCost =  function () {
                 $http({
                     url: "/vehicle",
@@ -104,8 +117,7 @@
                 }).then(
                     function(response) {
                         $scope.vehicleCost = response.data;
-                        $scope.$watch('streetTotalCostPavimentada', function () {
-                            //$scope.vehicleCost = response.data;
+                        $scope.$watch('vehicleCost', function () {
                             $scope.totalCost = 0;
                             $scope.totalCost =
                                 $scope.streetTotalCostPavimentada+
@@ -120,7 +132,7 @@
         };
 
 
-        //METODO RESOURCE COM PROBLEMAS NO RETORNO, SUBSTITUIR POR $HTTP
+        //Method with problem in retorn of request, I will use the  $HTTP now.
         // $scope.getCharge = function(){
         //
         //     resourceChargeFactory
