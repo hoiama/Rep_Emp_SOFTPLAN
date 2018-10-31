@@ -14,10 +14,8 @@ public class StreetEntity {
 
     final String PAVIMENTADA = "Pavimentada";
     final String NAO_PAVIMENTADA = "Não pavimentada";
-
     final double VALUE_PAVIMENTADA = 0.54;
     final double VALUE_NAO_PAVIMENTADA = 0.62;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

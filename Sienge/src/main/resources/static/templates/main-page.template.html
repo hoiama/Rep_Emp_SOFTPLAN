@@ -4,7 +4,7 @@
                 <div class="col-md-9 mb-3">
                     <label for="streetPavimentadaDistance">Pavimentada</label>
                     <div class="form-group align-cost-result">
-                        <input type="text" id="streetPavimentadaDistance" name="streetPavimentadaDistance" class="form-control" ng-model="streetPavimentadaDistance" onchange="angular.element(this).scope().getStreetPavimentada()" placeholder="Kilometros" required>
+                        <input type="text" id="streetPavimentadaDistance" name="streetPavimentadaDistance"  class="form-control" ng-model="streetPavimentadaDistance" onchange="angular.element(this).scope().getStreetPavimentada()" placeholder="Kilometros" required>
                         <div class="input-group-text space-result">R$: {{streetTotalCostPavimentada  | number : 2}}</div>
                     </div>
                     <div class="alert alert-danger" ng-show="costForm.streetPavimentadaDistance.$invalid && costForm.streetPavimentadaDistance.$touched">

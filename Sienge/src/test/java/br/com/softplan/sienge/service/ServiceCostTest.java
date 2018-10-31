@@ -33,12 +33,12 @@ public class ServiceCostTest {
     private ChargeEntity chargeEntity;
     private List<StreetEntity> streetEntities;
     private double streetCostWithKilometer = 54.00;
-
+    private double delta = 0.01;
 
     @Before
     public void getVehicle(){
         VehicleEntity vehicleEntity = new VehicleEntity();
-        vehicleEntity.setTypeVehicle("Caminhão caçamba");
+        vehicleEntity.setTypeVehicle("cacamba");
         this.vehicleEntity = vehicleEntity;
     }
 
@@ -82,7 +82,7 @@ public class ServiceCostTest {
     public void shouldGetStreetCostWithKilometer(){
         double streetCostWithKilometer = serviceCost.getStreetCostWithKilometer(streetEntities);
         assertNotNull(streetCostWithKilometer);
-        assertEquals(streetCostWithKilometer, streetCostWithKilometer, 0.1);
+        assertEquals(streetCostWithKilometer, streetCostWithKilometer, delta);
 
     }
 
@@ -91,7 +91,7 @@ public class ServiceCostTest {
     public void shouldGetKilometerCostWithVehicle(){
         double withVehicleCost = serviceCost.getKilometerCostWithVehicle(vehicleEntity, streetCostWithKilometer);
         assertNotNull(withVehicleCost);
-        assertEquals(2.70, withVehicleCost, 0.1);
+        assertEquals(2.7, withVehicleCost, delta);
     }
 
 
@@ -99,7 +99,7 @@ public class ServiceCostTest {
     public void shouldGetCostKilometerWithWeight(){
         double costKilometerWithWeight = serviceCost.getCostKilometerWithWeight(chargeEntity, streetEntity.getKilometer());
         assertNotNull(costKilometerWithWeight);
-        assertEquals(6.0, costKilometerWithWeight, 0.1);
+        assertEquals(6.0, costKilometerWithWeight, delta);
     }
 
 }

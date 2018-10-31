@@ -5,7 +5,6 @@ public class VehicleEntity {
     final String BAU = "bau";
     final String CACAMBA = "cacamba";
     final String CARRETA = "carreta";
-
     final double VALUE_BAU = 1.00;
     final double VALUE_CACAMBA = 1.05;
     final double VALUE_CARRETA = 1.12;

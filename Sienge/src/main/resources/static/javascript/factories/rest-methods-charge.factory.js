@@ -2,9 +2,9 @@ app.factory('resourceChargeFactory', resourceChargeFactory);
 
 function resourceChargeFactory($resource){
 
-    let url = "/charge/:id";
-    let params = {kilometer:"@id",weight:"@id"};
-    let actions = {
+    var url = "/charge/:id";
+    var params = {kilometer:"@id",weight:"@id"};
+    var actions = {
         update: { method: 'PUT' } ,
         post: {method:'POST', headers: [{'Content-Type': 'application/json'}]},
         get: {method:'GET', headers: [{'Content-Type': 'application/json'}]}

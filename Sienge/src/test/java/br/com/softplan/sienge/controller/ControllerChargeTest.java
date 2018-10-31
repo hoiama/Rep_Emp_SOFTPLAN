@@ -12,37 +12,38 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = App.class)
 @AutoConfigureMockMvc
-public class ControllerVehicleTest {
+public class ControllerChargeTest {
 
 
     @Autowired
     private MockMvc mvc;
 
     @Mock
-    VehicleController vehicleController;
+    ChargeController chargeController;
 
 
     @Test
     public void contexLoads() throws Exception {
-        Assert.assertNotNull(vehicleController);
+        Assert.assertNotNull(chargeController);
     }
 
 
     @Test
-    public void sholdGetVehicleCost() throws Exception {
-        mvc.perform(get("/vehicle")
+    public void sholdGetChargeCost() throws Exception {
+        mvc.perform(get("/charge")
                 .param("kilometer", "100")
+                .param("weight", "100")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE));
 
     }
-
 
 }
