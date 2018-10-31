@@ -88,3 +88,5 @@ Sienge/\.gradle*
 Sienge/.gradle
 Sienge/.gradle*
 Sienge/src/main/resources/static/framework/npm/node_modules/
+
+Exercicio/\.idea/
