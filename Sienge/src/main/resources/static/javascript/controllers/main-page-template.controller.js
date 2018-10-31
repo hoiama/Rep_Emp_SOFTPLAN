@@ -21,6 +21,7 @@
         $scope.vehicleCost = 0;
         $scope.totalCost = 0;
 
+        $scope.placeholder3 = 100;
 
         /**
          * Get method to get the cost of paved street
