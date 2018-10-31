@@ -17,6 +17,7 @@ TECNOLOGIAS:
 	- Servidor Tomcat 9
 	- Gradle
 	- RestFull
+	- Mock
 
 	
 	Interface principal;
@@ -52,7 +53,7 @@ CONCLUÍDO:
 
 	- Consulta de custo por quilometro de estada Não pavimentada:
 	
-		GET: http://localhost:8080/street//nao-pavimentada?kilometer=100
+		GET: http://localhost:8080/street/nao-pavimentada?kilometer=100
 
 
 
@@ -83,16 +84,18 @@ FALTA CONCLUIR:
 	- Finalizar Validação frontEnd.
 	- Integrar Validação do backend como Front.
 	- Diagramas UML.
-	- Documentar levantamento de requisitos.
 	- Implementar padrões de projetos  "Strategy".
-	- Testes Unitários Backend.
 	- Viabilizar alteração de Taxas via frontEnd.
 
 
 OBSERVAÇÕES
 
+	- Acessar plasta "Application" e 
+	- Executar comando "java -jar Sienge-0.0.1-SNAPSHOT.jar" ou "java -jar Sienge-0.0.1-SNAPSHOT.war"
+	- Abrir browser e digitar  "http://localhost:8080"
+
 	- Projeto em desenvolvimento.
-	- Antes de executar será necessário instalar as dependencias via "npm" no seguinte path:
+	- Dependencias via "npm" no seguinte path:
 		/Sienge/src/main/resources/static/framework/npm
 
 </p>
