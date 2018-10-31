@@ -1,5 +1,6 @@
 
 Sienge/build/
+!Sienge/build/libs
 Sienge/\.idea/
 
 # User-specific stuff
