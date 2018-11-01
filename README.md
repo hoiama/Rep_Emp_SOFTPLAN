@@ -96,7 +96,7 @@ FALTA CONCLUIR:
 
 INSTRUÇÕES DE USO:
 
-	- Acessar plasta "Application"
+	- Acessar o diretório "/Application"
 	- Executar comando "java -jar Sienge-0.0.1-SNAPSHOT.jar" ou "java -jar Sienge-0.0.1-SNAPSHOT.war" 
 	- Abrir browser e digitar  "http://localhost:8080" 
 
