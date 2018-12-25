@@ -50,6 +50,7 @@ public class StreetEntity {
 
 
     public double getCostAll(){
+
         if(this.typeStreet.equalsIgnoreCase(PAVIMENTADA)) {
             return VALUE_PAVIMENTADA * kilometer;
 

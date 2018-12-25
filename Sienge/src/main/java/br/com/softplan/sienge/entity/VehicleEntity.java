@@ -9,12 +9,11 @@ public class VehicleEntity {
     final double VALUE_CACAMBA = 1.05;
     final double VALUE_CARRETA = 1.12;
 
-
     private Long idVehicle;
     private String typeVehicle;
 
-
     public double getCostByVehicle(double costByVehicle){
+
         if(this.typeVehicle.equalsIgnoreCase(BAU)){
             return (costByVehicle * VALUE_BAU) - costByVehicle;
 
@@ -33,16 +32,13 @@ public class VehicleEntity {
         return idVehicle;
     }
 
-
     public void setIdVehicle(Long idVehicle) {
         this.idVehicle = idVehicle;
     }
 
-
     public String getTypeVehicle() {
         return typeVehicle;
     }
-
 
     public void setTypeVehicle(String typeVehicle) {
         this.typeVehicle = typeVehicle;

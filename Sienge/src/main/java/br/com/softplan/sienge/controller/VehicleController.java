@@ -15,7 +15,6 @@ public class VehicleController {
     @Autowired
     ServiceCost serviceCost;
 
-
     /**
      * Get the cost about the vehicle used to transported the charge
      * @return double value os the cost

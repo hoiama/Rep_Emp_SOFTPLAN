@@ -1,6 +1,5 @@
 package br.com.softplan.sienge.controller;
 
-
 import br.com.softplan.sienge.main.App;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,8 +12,6 @@ import org.springframework.boot.test.json.GsonTester;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -23,19 +20,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class ControllerStreetTest {
 
-
     @Autowired
     private MockMvc mvc;
 
     @Mock
     VehicleController vehicleController;
 
-
     @Test
     public void contexLoads() throws Exception {
         Assert.assertNotNull(vehicleController);
     }
-
 
     @Test
     public void sholdGetStreetPavimentadaCost() throws Exception {

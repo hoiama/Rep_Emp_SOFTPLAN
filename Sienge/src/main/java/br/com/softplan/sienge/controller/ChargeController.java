@@ -14,7 +14,6 @@ public class ChargeController {
     @Autowired
     ServiceCost serviceCost;
 
-
     /**
      * Get the cost about the charge transported in street
      * @return double value os the cost

@@ -16,32 +16,13 @@ function myModel() {
             //Peguei  o valor do atributo passado no elemento
             console.log("5", attr.myModel);
 
-
             //Finalmente como sincronizar $wath element do html
             scope.$watch(element.html(), function(value) {
-
                 scope[attr.myModel] = attr.value;
                 console.log("placeholder3", scope.placeholder3 );
-
             });
         }
     };
 };
 
-// function myModel (Translator) {
-//     return {
-//         restrict: 'A', // Restrict directive to attribute
-//         scope: {
-//             translate: '@' // The key/string to be translated
-//         },
-//         controller: ['$scope', 'Translator', // Inject Translator, a service that I created down below that handles the translations.
-//             function ($scope, Translator) {
-//                 $scope.translated = Translator.translate($scope.translate);
-//             }
-//         ],
-//         link: function (scope, element, attrs) {
-//             attrs.placeholder = scope.translated;
-//         }
-//     };
-// };
 

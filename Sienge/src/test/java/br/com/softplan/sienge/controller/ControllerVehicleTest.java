@@ -1,6 +1,5 @@
 package br.com.softplan.sienge.controller;
 
-
 import br.com.softplan.sienge.main.App;
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,19 +20,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class ControllerVehicleTest {
 
-
     @Autowired
     private MockMvc mvc;
 
     @Mock
     VehicleController vehicleController;
 
-
     @Test
     public void contexLoads() throws Exception {
         Assert.assertNotNull(vehicleController);
     }
-
 
     @Test
     public void sholdGetVehicleCost() throws Exception {

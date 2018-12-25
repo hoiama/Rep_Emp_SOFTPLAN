@@ -13,7 +13,6 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-
 @SpringBootApplication
 @EnableJpaRepositories(basePackageClasses = StreetRepository.class)
 @ComponentScan(basePackageClasses= {PagesController.class, ServiceCost.class, StreetEntity.class})

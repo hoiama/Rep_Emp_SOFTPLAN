@@ -15,7 +15,6 @@ public class StreetController {
     @Autowired
     ServiceCost serviceCost;
 
-
     /**
      * Get the street cost by the paved street and not paved street
      * @param streetEntityList List of json steets in the request

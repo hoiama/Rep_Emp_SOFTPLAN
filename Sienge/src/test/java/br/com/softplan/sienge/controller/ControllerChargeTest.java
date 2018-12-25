@@ -21,19 +21,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class ControllerChargeTest {
 
-
     @Autowired
     private MockMvc mvc;
 
     @Mock
     ChargeController chargeController;
 
-
     @Test
     public void contexLoads() throws Exception {
         Assert.assertNotNull(chargeController);
     }
-
 
     @Test
     public void sholdGetChargeCost() throws Exception {
@@ -45,5 +42,4 @@ public class ControllerChargeTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE));
 
     }
-
 }

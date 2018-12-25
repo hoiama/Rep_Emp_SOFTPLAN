@@ -4,4 +4,4 @@ app.factory('Translator', function () {
                 return YourLookUpInDictionaryMethodOrWhatever(key);
             }
         };
-    });
+});

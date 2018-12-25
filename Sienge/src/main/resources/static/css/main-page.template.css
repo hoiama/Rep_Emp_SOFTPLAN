@@ -1,8 +1,6 @@
-
 body, html {
     height: 100%;
 }
-
 
 .bg {
     background-image: url(/imagens/street1.jpg);
@@ -11,7 +9,6 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 
 .form{
     width: 25rem;
@@ -25,12 +22,9 @@ body, html {
     font-size: 1.08rem;
 }
 
-
 .space > div{
     margin: 10px;
 }
-
-
 
 .vehicle-div{
     align-items: center;
@@ -47,16 +41,13 @@ body, html {
     border-radius: 0.25rem;
 }
 
-
 input.ng-invalid{
     border-color: #dc3545;
 }
 
-
 .align-cost-result{
     display: -webkit-inline-box;
 }
-
 
 .my-dropdown{
     border: 1px solid transparent;
@@ -64,7 +55,6 @@ input.ng-invalid{
     border-radius: 5px;
     width: 15.4rem;
 }
-
 
 .my-dropdown option{
     background-color: #d2e4ff;

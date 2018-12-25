@@ -18,6 +18,7 @@ public class ChargeEntity {
     private int weight;
 
     public double getCostKilometerWithWeight(double kilometer){
+
         if (weight > WEIGTH_LIMIT){
             int excess = this.weight - WEIGTH_LIMIT;
             return excess * WEIGTH * kilometer;
@@ -31,16 +32,13 @@ public class ChargeEntity {
         return idWigth;
     }
 
-
     public void setIdWigth(Long idWigth) {
         this.idWigth = idWigth;
     }
 
-
     public int getWeight() {
         return weight;
     }
-
 
     public void setWeight(int weight) {
         this.weight = weight;
